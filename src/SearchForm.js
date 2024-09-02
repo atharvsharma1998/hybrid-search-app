@@ -42,8 +42,9 @@ const SearchForm = () => {
 
     try {
       // Send a POST request to the server with the search query and vector
-      const response = await axios.post('http://localhost:3000/api/elastic-search', payload); // Use your API endpoint
-            
+      // const response = await axios.post('http://localhost:3000/api/elastic-search', payload); // Use your API endpoint
+      const response = await axios.post('https://hybrid-search-backend.vercel.app/api/elastic-search', payload); // Use your API endpoint
+   
       // Update the state with the results and time taken
       setResults(response.data.results);
       setTimeTaken(response.data.timeTaken);
